@@ -139,7 +139,7 @@ public class DemoInfo {
         /**
          * artists : [{"id":61800047,"name":"Mc王子辰","portrait":"http://pic.cdn.duomi.com/imageproxy2/dimgm/scaleImage?url=http://img.kxting.cn//p1/19/00/72484467.jpg&w=150&h=150&s=100&c=0&o=0&m=","valid":true}]
          * available : true
-         * company : 
+         * company :
          * cover : http://pic.cdn.duomi.com/imageproxy2/dimgm/scaleImage?url=http://img.kxting.cn//p1/16/19/72479008.jpg&w=150&h=150&s=100&c=0&o=0&m=
          * id : 2736401
          * name : 热门伴奏
@@ -328,11 +328,11 @@ public class DemoInfo {
          * album : {"cover":"/p1/14/17/72490259.jpg","id":2738798,"name":"买回忆的人"}
          * artists : [{"id":61773082,"name":"任帅兵","num_albums":2,"num_tracks":8,"portrait":"","valid":false}]
          * availability : 1110
-         * dlyric : 
+         * dlyric :
          * id : 28128527
          * medias : [{"bitrate":320,"p2purl":"D110153143D0599A7C050000008C7319530000009F.mp3"}]
          * mv : 0
-         * slyric : 
+         * slyric :
          * title : 热门
          * isdown : 1
          * isplay : 1
@@ -480,7 +480,7 @@ public class DemoInfo {
              * name : 任帅兵
              * num_albums : 2
              * num_tracks : 8
-             * portrait : 
+             * portrait :
              * valid : false
              */
 

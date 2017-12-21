@@ -9,7 +9,7 @@ import java.util.List;
  * @Version: 1.0
  */
 public class DemoEntity {
-    
+
     private List<DemoItemEntity> mEntityList;
 
     public List<DemoItemEntity> getEntityList() {

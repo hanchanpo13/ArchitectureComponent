@@ -11,8 +11,8 @@ import com.bumptech.glide.Glide;
  * @Version: 1.0
  */
 public class XZImageLoader {
-    
-    public static void loadImage(String url, ImageView view){
+
+    public static void loadImage(String url, ImageView view) {
         Glide.with(view.getContext())
                 .load(url)
                 .crossFade()

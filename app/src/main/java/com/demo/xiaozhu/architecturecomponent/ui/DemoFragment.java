@@ -27,15 +27,14 @@ public class DemoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-            @Nullable Bundle savedInstanceState) {
+                             @Nullable Bundle savedInstanceState) {
         View rootView = LayoutInflater.from(getContext()).inflate(R.layout.demo_fr_layout, container, false);
         mRecyclerView = rootView.findViewById(R.id.demo_list_view);
         mAdapter = new DemoListAdapter();
         mRecyclerView.setAdapter(mAdapter);
         return mRecyclerView;
     }
-    
-    
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -44,20 +43,20 @@ public class DemoFragment extends Fragment {
         viewModel.observe(this, new Observer<DemoEntity>() {
             @Override
             public void onChanged(@Nullable DemoEntity demoInfo) {
-                if(demoInfo !=null){
+                if (demoInfo != null) {
                     refreshUI(demoInfo);
-                }else {
-                    Toast.makeText(getActivity(),"数据异常",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "数据异常", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
     private void refreshUI(DemoEntity demoInfo) {
-        mAdapter.refreshList(demoInfo.getEntityList(),false);
+        mAdapter.refreshList(demoInfo.getEntityList(), false);
     }
-    
-    class DemoListAdapter extends XZBaseRecycleViewAdapter<DemoEntity.DemoItemEntity>{
+
+    class DemoListAdapter extends XZBaseRecycleViewAdapter<DemoEntity.DemoItemEntity> {
 
         @Override
         public BaseViewHolder<DemoEntity.DemoItemEntity> onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -69,16 +68,16 @@ public class DemoFragment extends Fragment {
 
                 @Override
                 public void initView(View view) {
-                    demoListItemIvIcon =  view.findViewById(R.id.demo_list_item_iv_icon);
-                    demoListItemTvTitle =  view.findViewById(R.id.demo_list_item_tv_title);
-                    demoListItemTvDesc =  view.findViewById(R.id.demo_list_item_tv_desc);
+                    demoListItemIvIcon = view.findViewById(R.id.demo_list_item_iv_icon);
+                    demoListItemTvTitle = view.findViewById(R.id.demo_list_item_tv_title);
+                    demoListItemTvDesc = view.findViewById(R.id.demo_list_item_tv_desc);
                 }
 
                 @Override
                 public void bindDate(int position) {
                     DemoEntity.DemoItemEntity item = getItem(position);
                     if (item != null) {
-                        XZImageLoader.loadImage(item.getIconUrl(),demoListItemIvIcon);
+                        XZImageLoader.loadImage(item.getIconUrl(), demoListItemIvIcon);
                         demoListItemTvTitle.setText(item.getTitle());
                         demoListItemTvDesc.setText(item.getDes());
                     }

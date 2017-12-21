@@ -37,8 +37,8 @@ public abstract class XZBaseRecycleViewAdapter<T> extends
         }
         return null;
     }
-    
-    public void refreshList(Collection<T> orderInvoice, boolean isAppend){
+
+    public void refreshList(Collection<T> orderInvoice, boolean isAppend) {
         if (!isAppend) {
             mList.clear();
         }

@@ -20,7 +20,7 @@ public class IPInfoRepository {
     private static Retrofit sRetrofit;
 
     static {
-        
+
         Gson gson = new GsonBuilder()
                 //配置你的Gson
                 .setDateFormat("yyyy-MM-dd hh:mm:ss")
@@ -65,8 +65,6 @@ public class IPInfoRepository {
             }
         });
     }
-    
-    
-    
-    
+
+
 }
