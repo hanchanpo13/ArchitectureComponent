@@ -3,6 +3,7 @@ package com.demo.xiaozhu.architecturecomponent.ui.base;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -52,9 +53,9 @@ public abstract class XZBaseRecycleViewAdapter<T> extends
 
     public abstract class BaseViewHolder<T> extends ViewHolder {
 
-        public BaseViewHolder(View view) {
-            super(view);
-            initView(view);
+        public BaseViewHolder(ViewGroup view, int layoutID) {
+            super(LayoutInflater.from(view.getContext()).inflate(layoutID, view, false));
+            initView(itemView);
         }
 
         public void initView(View view) {

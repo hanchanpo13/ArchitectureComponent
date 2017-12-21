@@ -29,7 +29,7 @@ public class IPInfoPageViewModel extends MutableLiveData<DemoEntity> implements 
                 DemoEntity.DemoItemEntity itemEntity = new DemoEntity.DemoItemEntity();
                 itemEntity.setIconUrl(artistsBean.getPortrait());
                 itemEntity.setTitle(artistsBean.getName() + "(" + artistsBean.getId() + ")");
-                itemEntity.setDes(album.getType() + album.getName());
+                itemEntity.setDes(album.getType() +"-"+ album.getName());
                 demoItemEntities.add(itemEntity);
             }
         }

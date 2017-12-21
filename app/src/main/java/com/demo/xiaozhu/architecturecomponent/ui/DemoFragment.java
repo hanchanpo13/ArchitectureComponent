@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,9 +31,12 @@ public class DemoFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View rootView = LayoutInflater.from(getContext()).inflate(R.layout.demo_fr_layout, container, false);
         mRecyclerView = rootView.findViewById(R.id.demo_list_view);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRecyclerView.setLayoutManager(layoutManager);
         mAdapter = new DemoListAdapter();
         mRecyclerView.setAdapter(mAdapter);
-        return mRecyclerView;
+        return rootView;
     }
 
 
@@ -50,6 +54,7 @@ public class DemoFragment extends Fragment {
                 }
             }
         });
+        viewModel.showView();
     }
 
     private void refreshUI(DemoEntity demoInfo) {
@@ -60,7 +65,7 @@ public class DemoFragment extends Fragment {
 
         @Override
         public BaseViewHolder<DemoEntity.DemoItemEntity> onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new BaseViewHolder<DemoEntity.DemoItemEntity>(parent) {
+            return new BaseViewHolder<DemoEntity.DemoItemEntity>(parent,R.layout.demo_item_layout) {
 
                 private ImageView demoListItemIvIcon;
                 private TextView demoListItemTvTitle;
