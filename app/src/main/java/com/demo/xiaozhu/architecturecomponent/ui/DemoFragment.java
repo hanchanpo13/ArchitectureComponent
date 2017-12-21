@@ -69,7 +69,7 @@ public class DemoFragment extends Fragment {
 
                 private ImageView demoListItemIvIcon;
                 private TextView demoListItemTvTitle;
-                private TextView demoListItemTvDesc;
+                private TextView demoListItemTvDesc; 
 
                 @Override
                 public void initView(View view) {
